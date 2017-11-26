@@ -20,14 +20,14 @@ ruby_block "line" do
   end
 end
 
-credentials = data_bag_item('tomcat_keys', 'credentials')
+#credentials = data_bag_item('tomcat_keys', 'credentials')
 
 # tomcat-users.xml config
 template node['tomcat']['tomcat-users_filepath'] do
   source 'tomcat-users.erb'
   variables ({
-    :username => credentials['username'],
-    :password => credentials['password']
+    :username => node['tomcat']['tomcat_admin'],
+    :password => node['tomcat']['tomcat_password']
   })
   action :create
 end
