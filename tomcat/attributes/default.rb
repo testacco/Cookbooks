@@ -10,6 +10,6 @@ node.default['tomcat']['tomcat_webapp']="/usr/share/tomcat/webapps/#{node.defaul
 node.default['tomcat']['url'] = "http://deployment:deployment123@10.0.0.22:8081/nexus/content/repositories/snapshots/com/softserveinc/edu/1.0.0-BUILD-SNAPSHOT/edu-1.0.0-BUILD-20171106.135307-1.war"
 #node.default['tomcat']['url']='http://deployment:deployment123@10.0.0.22:8081/nexus/content/repositories/redirect?r=snapshots&g=com.softserveinc&a=edu&v=LATEST/edu-1.0.0-BUILD.war'
 
-#node.default['tomcat']['tomcat_admin'] = credentials['username']
-#node.default['tomcat']['tomcat_password'] = credentials['password']
+node.default['tomcat']['tomcat_admin'] = "admin"
+node.default['tomcat']['tomcat_password'] = "admin"
 node.default['tomcat']['java_opts'] = "'-Djava.security.egd=file:/dev/./urandom -Djava.awt.headless=true -Xmx512m -XX:MaxPermSize=512m -XX:+UseConcMarkSweepGC'"
